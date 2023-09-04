@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import { Dropdown } from 'react-bootstrap'
-import caretDownFill from '../../../../public/img/caretDownFill.svg'
-import caretUpFill from '../../../../public/img/caretUpFill.svg'
+import caretDownFill from '/img/caretDownFill.svg'
+import caretUpFill from '/img/caretUpFill.svg'
 
 const DropdownMenu = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -16,6 +16,8 @@ const DropdownMenu = () => {
   const buttonStyle = {
     backgroundColor: '#0F206C',
     border: 'none',
+    display: 'flex',
+    justifyContent: 'center'
   }
 
   const menuStyle = {
@@ -28,7 +30,9 @@ const DropdownMenu = () => {
   return (
     <Dropdown show={isOpen} onToggle={toggleDropdown} ref={dropdownRef}>
       <Dropdown.Item style={buttonStyle} onSelect={() => setIsOpen(!isOpen)}>
-        Categorías {!isOpen ? <img src={caretDownFill} alt='Caret Down Fill'/> : <img src={caretUpFill} alt='Caret Up Fill'/>}
+        <span className='me-2'>Categorías</span> {!isOpen
+          ? <img src={caretDownFill} alt='Caret Down Fill'/>
+          : <img src={caretUpFill} alt='Caret Up Fill'/>}
       </Dropdown.Item>
 
       <Dropdown.Menu style={menuStyle}>
