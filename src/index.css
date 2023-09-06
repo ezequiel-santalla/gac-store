@@ -1,0 +1,38 @@
+/* Estilos del footer */
+
+ul {
+  list-style-type: none;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #0f206c;
+  color: white;
+  height: 250px; /* Tener ojo a esto */
+}
+
+.alternative-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: #fff;
+  width: 208px;
+  height: 79px;
+}
+
+.grey-circle {
+  margin-top: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.29);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
