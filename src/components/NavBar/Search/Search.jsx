@@ -10,7 +10,7 @@ const Search = () => {
 
   return (
     <div>
-      <InputGroup className=''>
+      <InputGroup>
         <Form.Control
           placeholder="Buscar Productos"
           aria-label="Buscar Productos"

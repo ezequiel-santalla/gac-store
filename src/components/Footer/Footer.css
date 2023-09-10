@@ -1,0 +1,18 @@
+section {
+  list-style-type: none;
+}
+
+.alternative-logo {
+  border-radius: 5px;
+}
+
+.grey-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.29);
+  border-radius: 50%;
+}
