@@ -1,5 +1,5 @@
 import './Footer.css'
-import logoAlternativo from "/logo-alternativo.png"
+import logo from "/logo.png"
 import facebook from "/img/facebook.svg"
 import twitter from "/img/twitter.svg"
 import instagram from "/img/instagram.svg"
@@ -8,14 +8,14 @@ import youtube from "/img/youtube.svg"
 const Footer = () => {
 
   return (
-    <footer className="text-white" style={{ backgroundColor: '#192148' }}>
-      <div className="">
+    <footer className="text-white" style={{ backgroundColor: '#13131D' }}>
+      <div className="py-5">
         <div className="row">
-          <div className="col">
+          <div className="col pt-5 pe-5 pb-2">
             <div className="d-flex justify-content-center">
-              <img className='alternative-logo bg-white px-5 py-3' src={logoAlternativo} alt="logo gac-store" />
+              <img className='alternative-logo px-5 py-1' src={logo} alt="logo gac-store" />
             </div>
-            <div className="d-flex justify-content-center gap-2">
+            <div className="d-flex justify-content-center gap-3 pt-4 pb-5">
               <div className="grey-circle">
                 <img src={facebook} alt="Facebook" />
               </div>
@@ -30,27 +30,30 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="col">
-            <h4 className="">SHORT LINKS</h4>
-            <section className="fw-light">
+
+          <div className="col pt-5">
+            <h4 className="ps-5">SHORT LINKS</h4>
+            <section className="ps-5 fw-light">
               <li>Home</li>
               <li>Services</li>
               <li>Screenshots</li>
               <li>Contact</li>
             </section>
           </div>
-          <div className="col">
-            <h4 className="">HELP LINK</h4>
-            <section className="fw-light">
+
+          <div className="col pt-5">
+            <h4 className="ps-5">HELP LINK</h4>
+            <section className="ps-5 fw-light">
               <li className="">How to dowload</li>
               <li className="">How it work</li>
               <li className="">Video tutorial</li>
               <li className="">FAQ</li>
             </section>
           </div>
-          <div className="col">
-            <h4 className="">SHORT LINKS</h4>
-            <section className="fw-light">
+
+          <div className="col pt-5">
+            <h4 className="ps-5">SHORT LINKS</h4>
+            <section className="ps-5 fw-light">
               <li className="">Google Play Store</li>
               <li className="">Apple App Store</li>
               <li className="">Download Directly</li>
@@ -62,4 +65,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Footer
