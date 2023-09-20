@@ -1,4 +1,4 @@
-import logoAlternativo from "../../../public/logo-alternativo.png";
+/* import logoAlternativo from "../../../public/logo-alternativo.png"; */
 
 const Footer = () => {
   return (
@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="row">
           <div className="col">
             <div className="alternative-logo">
-              <img src={logoAlternativo} alt="logo gac-store" />
+              <img src="" alt="logo gac-store" />
             </div>
             <div className="d-flex">
               <div className="grey-circle m-2">

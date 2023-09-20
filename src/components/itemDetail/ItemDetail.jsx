@@ -1,50 +1,113 @@
-import "./itemDetail.css";
-import { products } from "../../productsMock.js";
 import { useEffect, useState } from "react";
-const ItemDetail = () => {
-  const [items, setItems] = useState([]);
+import "./itemDetail.css";
+const ItemDetail = ({ productSelected }) => {
+  //Definimos un estado que guardara las miniaturas
+  const [thumbnails, setThumbnails] = useState([]);
+
+  //definimos un estado donde se guarde la miniatura principal
+  const [mainImg, setMainImg] = useState(null);
+
+  //creamos un estado que guarde a la miniatura activa
+  const [activeThumbnail, setActiveThumbnail] = useState(null);
+
   useEffect(() => {
-    setItems(products);
-    console.log(items);
-  });
+    if (productSelected && productSelected.imagenes) {
+      // Si hay imágenes en el producto seleccionado, las establecemos en el estado
+      setThumbnails(productSelected.imagenes);
+      setMainImg(productSelected.imagenes[0]);
+    }
+  }, [productSelected]);
+
+  const cambiarPuntero = (event) => {
+    // Obtén la thumbnail que se hizo clic
+    const clickedThumbnail = event.target;
+
+    // Quita la clase "active" del elemento actualmente activo (si existe)
+    const currentActiveThumbnail = document.querySelector(".active");
+    if (currentActiveThumbnail) {
+      currentActiveThumbnail.classList.remove("active");
+    }
+
+    // Agrega la clase "active" a la thumbnail clicada
+    clickedThumbnail.classList.add("active");
+
+    // Actualiza el estado en React para reflejar la thumbnail activa
+    setActiveThumbnail(clickedThumbnail);
+
+    //cambiamos la imagen main
+    setMainImg(clickedThumbnail.src);
+  };
+
   return (
     <>
-      <div className="container">
-        <div className="row">
-          <div className="col photos-column">
-            <div className="img-container">
-              <img src={items[0].imagenes[2]} alt="" className="main-img" />
-              <br />
-              <br />
-              <div className="thumbnail-container">
-                <img src={items[0].imagenes[2]} alt="" className="thumbnail" />
-                <img src={items[0].imagenes[2]} alt="" className="thumbnail" />
-                <img src={items[0].imagenes[2]} alt="" className="thumbnail" />
+      {productSelected ? (
+        <div className="container">
+          <div className="row">
+            <div className="col photos-column">
+              <div className="img-container">
+                <img
+                  src={productSelected.imagenes && mainImg}
+                  alt=""
+                  className="main-img"
+                />
+                <br />
+                <br />
+                <div className="thumbnail-container">
+                  {/* Renderizamos las miniaturas en función del estado */}
+                  {thumbnails.map((thumbnail, index) => (
+                    <img
+                      key={index}
+                      src={thumbnail}
+                      alt=""
+                      className={`thumbnail ${index === 0 ? "active" : ""}`}
+                      onClick={cambiarPuntero}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-          <div className="col card-details">
-            <h3>Combo Lanzamiento</h3>
-            <h3>
-              <b>Apolo Pro Plus + Octupus</b>
-            </h3>
-            <p className="price">$141.256</p>
-            <div className="payment-methods">
-              <div className="payment-visa"></div>
-              <div className="payment-mastercard"></div>
-              <div className="payment-cabal"></div>
-            </div>
-            <div className="container px-5">
-              <div class="d-grid gap-2">
-                <button class="btn" type="button" style={{ color: "0F206C" }}>
-                  Button
-                </button>
+            <div className="col card-details">
+              <h3>Combo Lanzamiento</h3>
+              <h3>
+                <b>{productSelected.title}</b>
+              </h3>
+              <p className="price">${productSelected.price}</p>
+              <div className="payment-methods">
+                <div className="payment-visa"></div>
+                <div className="payment-mastercard"></div>
+                <div className="payment-cabal"></div>
+              </div>
+              {/* Parte de las cuotas */}
+              <div>
+                <div className="cuota">
+                  <b>3 cuotas</b> fijas de ${productSelected.price / 3}
+                </div>
+                <div className="cuota">
+                  <b>6 cuotas</b> fijas de ${productSelected.price / 6}
+                </div>
+                <div className="cuota">
+                  <b>12 cuotas</b> fijas de ${productSelected.price / 12}
+                </div>
+              </div>
+              {/* Botón para comprar */}
+              <div className="container px-5">
+                <div className="d-grid gap-2">
+                  <button
+                    className="btn"
+                    type="button"
+                    style={{ color: "0F206C" }}
+                  >
+                    Button
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      {/*   {<img src={items[0].imagenes[2]} alt="" className="" />} */}
+      ) : (
+        <h2>cargando...</h2>
+      )}
+      ;{/*   {<img src={items[0].imagenes[2]} alt="" className="" />} */}
     </>
   );
 };
