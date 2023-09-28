@@ -1,0 +1,11 @@
+.count {
+  background-color: #cce8ee;
+  width: 100px;
+}
+
+.count__btn {
+  background-color: #cce8ee;
+  border: 0px;
+  color: #005993;
+  font-weight: 800;
+}

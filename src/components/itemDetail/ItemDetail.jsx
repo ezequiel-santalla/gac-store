@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./itemDetail.css";
+import ItemCount from "../itemCount/ItemCount";
 const ItemDetail = ({ productSelected }) => {
   //Definimos un estado que guardara las miniaturas
   const [thumbnails, setThumbnails] = useState([]);
@@ -37,6 +38,8 @@ const ItemDetail = ({ productSelected }) => {
     //cambiamos la imagen main
     setMainImg(clickedThumbnail.src);
   };
+
+  const onAdd = () => {};
 
   return (
     <>
@@ -89,15 +92,52 @@ const ItemDetail = ({ productSelected }) => {
                   <b>12 cuotas</b> fijas de ${productSelected.price / 12}
                 </div>
               </div>
+              {/* Stock */}
+              <p>
+                <b>Stock</b>: {productSelected.stock}
+              </p>
+              {/* Contador de productos */}
+              <div className="row">
+                <div className="col-5">
+                  <p>
+                    <b>Cantidad:</b>
+                    <br />
+                    (Mínimo {productSelected.minimum} unidades)
+                  </p>
+                </div>
+                <div className="col-7">
+                  <ItemCount
+                    stock={productSelected.stock}
+                    initial={productSelected.minimum}
+                    onAdd={onAdd}
+                  />
+                </div>
+              </div>
               {/* Botón para comprar */}
               <div className="container px-5">
                 <div className="d-grid gap-2">
+                  {/* <button
+                    className="buttom"
+                    type="button"
+                    style={{ color: "0F206C", background: "red" }}
+                  >
+                    <p className="buttom__text">Comprar</p>
+                  </button> */}
+                  <button className="buttom" type="button">
+                    <div className="buttom__text">Comprar Ahora</div>
+                  </button>
                   <button
-                    className="btn"
+                    className="buttom-secondary"
                     type="button"
                     style={{ color: "0F206C" }}
                   >
-                    Button
+                    <i class="fa-solid fa-cart-plus"></i>
+                    <div
+                      className="buttom__text"
+                      style={{ marginRight: "15px", paddingLeft: "5px" }}
+                    >
+                      Añadir al carrito
+                    </div>
                   </button>
                 </div>
               </div>

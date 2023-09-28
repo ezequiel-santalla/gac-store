@@ -9,7 +9,8 @@ export const products = [
       "https://res.cloudinary.com/dttgwvnoe/image/upload/v1685591069/Ecommerce%20Notebooks/HP_Victus_of6ifu.webp",
       "https://res.cloudinary.com/dttgwvnoe/image/upload/v1685591065/Ecommerce%20Notebooks/Asus_Vivobook_qbshqv.webp",
     ],
-    stock: 10,
+    stock: 13,
+    minimum: 10,
   },
   {
     id: 2,
@@ -21,6 +22,7 @@ export const products = [
       "https://res.cloudinary.com/dttgwvnoe/image/upload/v1685591069/Ecommerce%20Notebooks/HP_Victus_of6ifu.webp",
       "https://res.cloudinary.com/dttgwvnoe/image/upload/v1685591065/Ecommerce%20Notebooks/Asus_Vivobook_qbshqv.webp",
     ],
-    stock: 10,
+    stock: 19,
+    minimum: 10,
   },
 ];
