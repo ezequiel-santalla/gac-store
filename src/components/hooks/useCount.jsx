@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 //El mínimo lo especifico por defecto como 1 en caso de que el componente que lo llame
 //no pase este parametro "minimo"
 export const useCount = (initial, stock, minimo = 1) => {
-  console.log("initial recibido por useCount", initial);
   const [count, setCount] = useState(initial);
+  useEffect(() => {
+    console.log(initial, "initial");
+    setCount(initial);
+  }, [initial]);
   //Se intancia una función incremenet que tiene en cuenta el stock para sumar un item
   const increment = () => count < stock && setCount(count + 1);
   //Se intancia una función decrement que tiene en cuenta el mínimo para restar un item

@@ -113,6 +113,7 @@ const ItemDetail = ({ productSelected }) => {
                   />
                 </div>
               </div>
+              <div className="sku-text">SKU: {productSelected.sku}</div>
               {/* Botón para comprar */}
               <div className="container px-5">
                 <div className="d-grid gap-2">

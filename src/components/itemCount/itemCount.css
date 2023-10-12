@@ -1,11 +1,13 @@
-.count {
+.counter-container {
   background-color: #cce8ee;
-  width: 100px;
+  width: 62px;
+  border-radius: 5px;
 }
 
-.count__btn {
+.counter-button {
   background-color: #cce8ee;
   border: 0px;
   color: #005993;
   font-weight: 800;
+  border-radius: 5px;
 }

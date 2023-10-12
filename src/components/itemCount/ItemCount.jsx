@@ -4,19 +4,18 @@ import "./itemCount.css";
 const ItemCount = ({ stock, initial, onAdd }) => {
   //Llamo al customHook useCount y uso la desestructuración para obtener el retorno de este custom hook
 
-  const { count, increment, decrement } = useCount(initial, stock);
+  const { count, increment, decrement } = useCount(initial, stock, initial);
 
   return (
     <>
-      <div className="count" style={{ borderRadius: "20px" }}>
-        <button onClick={decrement} className="count__btn">
+      <div className="counter-container">
+        <button onClick={decrement} className="counter-button">
           -
         </button>
-
-        <span className="">
-          <b>{count}10</b>
+        <span className="counter-value">
+          <b>{count}</b>
         </span>
-        <button onClick={increment} className="count__btn">
+        <button onClick={increment} className="counter-button">
           +
         </button>
       </div>
