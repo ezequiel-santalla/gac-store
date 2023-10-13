@@ -32,14 +32,14 @@ const ItemDescription = ({ productSelected }) => {
             });
           }}
           className={buttonClasses.primary}
-          style={{ padding: "5px" }}
+          style={{ padding: "5px", marginRight: "3px" }}
         >
           Descripción
         </button>
         <button
           onClick={onAdditionaInformation}
           className={buttonClasses.secondary}
-          style={{ padding: "5px" }}
+          style={{ padding: "5px", marginLeft: "3px" }}
         >
           Información Adicional
         </button>
