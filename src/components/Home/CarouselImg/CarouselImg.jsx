@@ -14,7 +14,7 @@ function ControlledCarousel() {
   }
 
   return (
-    <div style={carouselStyle}>
+    <div className='z-index-1000' style={carouselStyle}>
       <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
           <img className='w-100' src={carousel1} alt="" />

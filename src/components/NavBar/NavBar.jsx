@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import logo from '/logo.png'
 import tag from '/img/tag.svg'
 import infoSquare from '/img/infoSquare.svg'
@@ -26,7 +27,9 @@ const NavBar = () => {
 
       <div className='d-flex align-items-center pt-3 pb-5 gap-5'>
         <div className='col-2 d-flex justify-content-center ps-5 pe-2'>
-          <img src={logo} alt="Logo Gac Store" />
+          <Link to={'/'}>
+            <img src={logo} alt="Logo Gac Store" />
+          </Link>
         </div>
         <div className='col-1 px-2'>
           <Dropdown />

@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import { Dropdown } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
 import caretDownFill from '/img/caretDownFill.svg'
 import caretUpFill from '/img/caretUpFill.svg'
 
@@ -36,11 +37,19 @@ const DropdownMenu = () => {
       </Dropdown.Item>
 
       <Dropdown.Menu style={menuStyle}>
-        <Dropdown.Item>Grabadoras Láser</Dropdown.Item>
+        <NavLink to="/categorias/grabadoras-laser" style={{ color: 'black', textDecoration: 'none'}}>
+          <div className='ps-3'>Escaners 3D</div>
+        </NavLink>
         <Dropdown.Divider />
-        <Dropdown.Item>Impresoras 3D</Dropdown.Item>
+
+        <NavLink to="/categorias/impresoras-3d" style={{ color: 'black', textDecoration: 'none'}}>
+          <div className='ps-3'>Impresoras 3D</div>
+        </NavLink>
         <Dropdown.Divider />
-        <Dropdown.Item>Escaners 3D</Dropdown.Item>
+
+        <NavLink to="/categorias/escaners-3d" style={{ color: 'black', textDecoration: 'none'}}>
+          <div className='ps-3'>Grabadoras Láser</div>
+        </NavLink>
       </Dropdown.Menu>
     </Dropdown>
   )
