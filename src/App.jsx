@@ -3,14 +3,10 @@ import WhatsAppLogo from './components/WhatsAppLogo/WhatsAppLogo'
 import NavBar from './components/NavBar/NavBar'
 import Home from './components/Home/Home'
 import CategoryContainer from './components/CategoryContainer/CategoryContainer'
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Cart from './components/Cart/Cart'
 import Checkout from './components/Checkout/Checkout'
 import Footer from './components/Footer/Footer'
 import { CartProvider } from './context/CartContext'
-import NavBar from "./components/NavBar/NavBar";
-import Footer from "./components/Footer/Footer";
-import ItemDetail from "./components/itemDetail/ItemDetail";
 import ItemDetailContainer from "./components/itemDetail/ItemDetailContainer";
 
 function App() {
