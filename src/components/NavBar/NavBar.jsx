@@ -37,14 +37,20 @@ const NavBar = () => {
         <div className='col-5 px-2'>
           <Search />
         </div>
-        <button className='col-1 d-flex justify-content-center align-items-center border-0 gap-2 px-2' style={{ backgroundColor: '#0F206C'}}>
-          <img src={person} alt="Person" />
-          <p className='m-0 text-white'>Mayorista</p>
-        </button>
-        <button className='col-1 d-flex justify-content-center align-items-center border-0 gap-2 px-2' style={{ backgroundColor: '#0F206C'}}>
-          <img src={cart} alt="Carrito" />
-          <p className='m-0 text-white'>Carrito</p>
-        </button>
+
+        <Link to={'/'} className='mx-3' style={{ textDecoration: 'none' }}>
+          <button className='col-1 d-flex justify-content-center w-auto align-items-center border-0 gap-2 p-0' style={{ backgroundColor: '#0F206C'}}>
+            <img src={person} alt="Person" />
+            <p className='m-0 text-white'>Mayorista</p>
+          </button>
+        </Link>
+
+        <Link to={'/cart'} className='mx-3' style={{ textDecoration: 'none' }}>
+          <button className='col-1 d-flex justify-content-center w-auto align-items-center border-0 gap-2 p-0' style={{ backgroundColor: '#0F206C'}}>
+            <img src={cart} alt="Carrito" />
+            <p className='m-0 text-white'>Carrito</p>
+          </button>
+        </Link>
       </div>
     </nav>
   )
