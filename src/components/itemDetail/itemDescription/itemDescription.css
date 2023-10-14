@@ -1,0 +1,15 @@
+.container__description {
+  border-bottom: 1px solid black;
+}
+
+.description__button {
+  background-color: #282828;
+  border-radius: 10px 10px 0px 0px;
+  color: #fff;
+}
+
+.description__button-secondary {
+  border-radius: 10px 10px 0px 0px;
+  background: #d9d9d9;
+  color: rgba(51, 51, 51, 0.6);
+}
